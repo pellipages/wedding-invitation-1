@@ -4211,18 +4211,163 @@ body {
 }
 @media (max-width: 650px) {
 
-    .invitation-card {
-        width: 90%;
-        left: 5%;
-    }
-
     .letter-image {
         overflow: visible;
     }
+}
+/* =========================================
+   FIX OPENING ENVELOPE
+========================================= */
 
-    .letter-image img {
+.opening {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.envelope-area {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.envelope {
+    position: relative;
+
+    width: 660px;
+    height: 430px;
+
+    margin: 0 auto;
+}
+
+
+/* INVITATION CARD */
+
+.invitation-card {
+    position: absolute;
+
+    width: 86%;
+    height: 92%;
+
+    left: 7%;
+    top: 3%;
+
+    z-index: 1;
+
+    overflow: hidden;
+
+    transition:
+        transform 1.2s ease,
+        opacity 0.8s ease;
+}
+
+
+/* CARD STAYS INSIDE BEFORE OPENING */
+
+.envelope:not(.open) .invitation-card {
+    transform: translateY(80px);
+}
+
+
+/* CARD COMES UP AFTER CLICK */
+
+.envelope.open .invitation-card {
+    transform: translateY(-250px);
+}
+
+
+/* ENVELOPE PIECES ABOVE CARD */
+
+.envelope-back {
+    z-index: 2;
+}
+
+.envelope-left,
+.envelope-right,
+.envelope-bottom {
+    z-index: 4;
+}
+
+.envelope-flap {
+    z-index: 5;
+}
+
+.wax-seal {
+    z-index: 7;
+}
+
+
+/* CLICK TO OPEN */
+
+.open-text {
+    position: relative;
+
+    margin-top: 45px;
+
+    text-align: center;
+    z-index: 10;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .opening {
+        min-height: 100svh;
+        height: 100svh;
+
+        padding: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .envelope-area {
         width: 100%;
-        height: auto;
-        object-fit: contain;
+        transform: none;
+    }
+
+    .envelope {
+        width: 86vw;
+        max-width: 350px;
+        height: 230px;
+
+        margin: 0 auto;
+    }
+
+    .invitation-card {
+        width: 86%;
+        height: 92%;
+
+        left: 7%;
+        top: 3%;
+    }
+
+    .envelope:not(.open) .invitation-card {
+        transform: translateY(45px);
+    }
+
+    .envelope.open .invitation-card {
+        transform: translateY(-150px);
+    }
+
+    .open-text {
+        margin-top: 40px;
+        font-size: 8px;
+        letter-spacing: 4px;
     }
 }
