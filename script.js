@@ -90,131 +90,66 @@ let invitationOpening = false;
 
 function openInvite() {
 
-    if (invitationOpening) {
-        return;
-    }
-
-
-    invitationOpening = true;
-
-
     const opening =
         document.getElementById("opening");
-
-
-    const envelope =
-        document.getElementById("envelope");
-
 
     const mainInvite =
         document.getElementById("mainInvite");
 
+    const envelope =
+        document.querySelector(".simple-envelope");
 
-    const openText =
-        document.querySelector(".open-text");
 
-
-    if (
-        !opening ||
-        !envelope ||
-        !mainInvite
-    ) {
+    if (!opening || !mainInvite) {
         return;
     }
 
 
-
-    /* hide CLICK TO OPEN */
-
-    if (openText) {
-
-        openText.style.opacity =
-            "0";
-
+    if (envelope) {
+        envelope.classList.add(
+            "opening-clicked"
+        );
     }
 
 
+    setTimeout(function () {
 
-    /* open envelope */
+        opening.classList.add("hide");
 
-    envelope.classList.add(
-        "open"
-    );
+    }, 450);
 
-
-
-    /*
-       Give the user enough time to see:
-
-       1. seal disappear
-       2. flap open
-       3. illustrated letter rise
-       4. Rukmini & Krishna on the letter
-    */
 
     setTimeout(function () {
 
-        opening.classList.add(
-            "hide"
+        opening.style.display = "none";
+
+        mainInvite.classList.add("show");
+
+        document.body.classList.add(
+            "invite-open"
         );
 
-    }, 2600);
+        window.scrollTo(0, 0);
 
 
+        requestAnimationFrame(function () {
 
-    /* show main website */
-
-    setTimeout(function () {
-
-        mainInvite.classList.add(
-            "show"
-        );
-
-
-        window.scrollTo(
-            0,
-            0
-        );
-
-
-        requestAnimationFrame(
-            function () {
-
-                mainInvite.classList.add(
-                    "visible"
-                );
-
-            }
-        );
-
-
-        if (
-            typeof setupScratchCanvas ===
-            "function"
-        ) {
-
-            setTimeout(
-                setupScratchCanvas,
-                150
+            mainInvite.classList.add(
+                "visible"
             );
 
-        }
 
-    }, 3000);
+            if (
+                typeof initScrollReveal ===
+                "function"
+            ) {
+                initScrollReveal();
+            }
 
+        });
 
-
-    /* completely remove opening */
-
-    setTimeout(function () {
-
-        opening.style.display =
-            "none";
-
-    }, 3700);
-
+    }, 1100);
 }
-
 /* =========================================================
    SCRATCH CARD VARIABLES
 ========================================================= */
