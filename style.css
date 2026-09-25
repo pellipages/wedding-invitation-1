@@ -1,0 +1,4151 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background-image: url("bg.png");
+    background-size: 700px auto;
+    background-repeat: repeat;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #704936;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   OPENING SCREEN
+   PRESERVES YOUR ORIGINAL DESIGN
+========================================================= */
+
+
+@keyframes treeSway {
+    0%,
+    100% {
+        transform:
+            rotate(-1deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            rotate(1.5deg)
+            translateY(-3px);
+    }
+}
+
+@keyframes treeSwayRight {
+    0%,
+    100% {
+        transform:
+            scaleX(-1)
+            rotate(-1deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            scaleX(-1)
+            rotate(1.5deg)
+            translateY(-3px);
+    }
+}
+
+
+/* =========================================================
+   OPENING CENTER
+========================================================= */
+
+/* =========================================================
+   ENVELOPE OPENING
+========================================================= */
+
+.opening {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background-image:
+        url("bg.png");
+
+    background-size:
+        700px auto;
+
+    background-repeat:
+        repeat;
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease,
+        visibility 1s ease;
+}
+
+
+.opening.hide {
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        scale(1.03);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TOP TEXT
+========================================================= */
+/* =========================================================
+   BASIC RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+
+body {
+    background-image: url("bg.png");
+    background-size: 700px auto;
+    background-repeat: repeat;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color: #704936;
+}
+
+
+
+/* =========================================================
+   OPENING SCREEN
+========================================================= */
+
+.opening {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background-image: url("bg.png");
+    background-size: 700px auto;
+    background-repeat: repeat;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease,
+        transform 1s ease;
+}
+
+
+.opening.hide {
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(1.02);
+
+    pointer-events: none;
+}
+
+
+
+/* =========================================================
+   ENVELOPE AREA
+========================================================= */
+
+.envelope-area {
+    position: relative;
+
+    width: 600px;
+    max-width: 92%;
+
+    height: 500px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+
+
+/* =========================================================
+   ENVELOPE
+========================================================= */
+
+.envelope {
+    position: relative;
+
+    width: 500px;
+    height: 315px;
+
+    max-width: 90vw;
+
+    perspective: 1400px;
+
+    filter:
+        drop-shadow(
+            0 20px 20px
+            rgba(72, 45, 29, 0.16)
+        );
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+.envelope-area:hover .envelope {
+    transform: translateY(-4px);
+}
+
+
+
+/* =========================================================
+   ENVELOPE BACK
+========================================================= */
+
+.envelope-back {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ead9b8,
+            #dfc69e
+        );
+
+    border:
+        1px solid
+        rgba(111, 74, 51, 0.22);
+}
+
+
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+.invitation-card {
+    position: absolute;
+
+    left: 50%;
+    bottom: 15px;
+
+    z-index: 2;
+
+    width: 430px;
+    height: 285px;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+
+    background: #f8f0df;
+
+    border:
+        1px solid
+        rgba(120, 85, 60, 0.25);
+
+    box-shadow:
+        0 8px 18px
+        rgba(73, 49, 35, 0.08);
+
+    transition:
+        transform 1.35s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        );
+}
+
+
+
+/* =========================================================
+   LETTER BORDER
+========================================================= */
+
+.card-border {
+    position: absolute;
+
+    inset: 8px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(120, 85, 60, 0.28);
+}
+
+
+
+/* =========================================================
+   WATERCOLOR IMAGE
+========================================================= */
+
+.letter-image {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    overflow: hidden;
+
+    background: #f8f0df;
+}
+
+
+.letter-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border: 0;
+}
+
+
+
+/* =========================================================
+   TEXT ON LETTER
+========================================================= */
+
+.letter-content {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 3;
+
+    padding:
+        38px
+        15px
+        17px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(249, 241, 224, 0.98) 0%,
+            rgba(249, 241, 224, 0.92) 58%,
+            rgba(249, 241, 224, 0) 100%
+        );
+}
+
+
+
+/* =========================================================
+   SMALL LETTER TEXT
+========================================================= */
+
+.letter-small {
+    margin:
+        0
+        0
+        7px;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 6px;
+
+    font-weight: 500;
+
+    letter-spacing: 3px;
+
+    color: #7b704a;
+}
+
+
+
+/* =========================================================
+   RUKMINI & KRISHNA
+========================================================= */
+
+.letter-content h2 {
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 29px;
+
+    line-height: 1;
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    color: #94483f;
+}
+
+
+.letter-content h2 span {
+    display: inline-block;
+
+    margin:
+        0
+        6px;
+
+    font-size: 17px;
+
+    font-style: normal;
+
+    color: #81794d;
+}
+
+
+
+/* =========================================================
+   LETTER DATE
+========================================================= */
+
+.letter-date {
+    margin-top: 9px;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+
+    color: #735c4d;
+}
+
+
+
+/* =========================================================
+   LEFT ENVELOPE FOLD
+========================================================= */
+
+.envelope-left {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    z-index: 4;
+
+    width: 0;
+    height: 0;
+
+    border-top:
+        157px solid transparent;
+
+    border-bottom:
+        158px solid transparent;
+
+    border-left:
+        250px solid #dec7a2;
+}
+
+
+
+/* =========================================================
+   RIGHT ENVELOPE FOLD
+========================================================= */
+
+.envelope-right {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    z-index: 4;
+
+    width: 0;
+    height: 0;
+
+    border-top:
+        157px solid transparent;
+
+    border-bottom:
+        158px solid transparent;
+
+    border-right:
+        250px solid #e5cfaa;
+}
+
+
+
+/* =========================================================
+   BOTTOM FOLD
+========================================================= */
+
+.envelope-bottom {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    z-index: 5;
+
+    width: 0;
+    height: 0;
+
+    border-left:
+        250px solid transparent;
+
+    border-right:
+        250px solid transparent;
+
+    border-bottom:
+        180px solid #ead8b9;
+}
+
+
+
+/* =========================================================
+   TOP FLAP
+========================================================= */
+
+.envelope-flap {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    z-index: 7;
+
+    width: 0;
+    height: 0;
+
+    border-left:
+        250px solid transparent;
+
+    border-right:
+        250px solid transparent;
+
+    border-top:
+        175px solid #dfc59f;
+
+    transform-origin:
+        top center;
+
+    transform:
+        rotateX(0deg);
+
+    transition:
+        transform 0.9s
+        cubic-bezier(
+            0.65,
+            0,
+            0.35,
+            1
+        ),
+        z-index 0s 0.45s;
+}
+
+
+
+/* =========================================================
+   WAX SEAL
+========================================================= */
+
+.wax-seal {
+    position: absolute;
+
+    left: 50%;
+    top: 143px;
+
+    z-index: 10;
+
+    width: 68px;
+    height: 68px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transform:
+        translateX(-50%)
+        scale(1);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #b86054,
+            #8c3d34 58%,
+            #68271f
+        );
+
+    border:
+        2px solid
+        rgba(255, 224, 190, 0.28);
+
+    box-shadow:
+        0 5px 9px
+        rgba(71, 37, 26, 0.22);
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.45s ease;
+}
+
+
+.wax-seal::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 6px;
+
+    border:
+        1px solid
+        rgba(245, 208, 170, 0.45);
+
+    border-radius: 50%;
+}
+
+
+.wax-seal span {
+    position: relative;
+
+    z-index: 2;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 17px;
+
+    font-style: italic;
+
+    color: #f4d9b7;
+}
+
+
+
+/* =========================================================
+   CLICK TO OPEN
+========================================================= */
+
+.open-text {
+    position: absolute;
+
+    left: 50%;
+    bottom: 15px;
+
+    transform:
+        translateX(-50%);
+
+    width: 100%;
+
+    text-align: center;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    color: #725744;
+
+    transition:
+        opacity 0.35s ease;
+
+    animation:
+        openPulse
+        2s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes openPulse {
+
+    0%,
+    100% {
+        opacity: 0.45;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+
+/* =========================================================
+   OPENING ANIMATION
+========================================================= */
+
+/* remove wax seal */
+
+.envelope.open .wax-seal {
+    opacity: 0;
+
+    transform:
+        translateX(-50%)
+        scale(0.55);
+
+    pointer-events: none;
+}
+
+
+
+/* flap flips backwards */
+
+.envelope.open .envelope-flap {
+    z-index: 0;
+
+    transform:
+        rotateX(180deg);
+}
+
+
+
+/* letter comes out */
+
+.envelope.open .invitation-card {
+    transform:
+        translateX(-50%)
+        translateY(-190px);
+}
+
+
+
+/* =========================================================
+   MAIN INVITATION
+========================================================= */
+
+.main-invite {
+    display: none;
+
+    width: 100%;
+
+    opacity: 0;
+
+    transition:
+        opacity 1s ease;
+}
+
+
+.main-invite.show {
+    display: block;
+}
+
+
+.main-invite.visible {
+    opacity: 1;
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .envelope-area {
+        width: 100%;
+        height: 420px;
+    }
+
+
+    .envelope {
+        width: 330px;
+        height: 208px;
+    }
+
+
+    /* LETTER */
+
+    .invitation-card {
+        width: 285px;
+        height: 190px;
+
+        bottom: 10px;
+    }
+
+
+    .card-border {
+        inset: 6px;
+    }
+
+
+    .letter-content {
+        padding:
+            28px
+            8px
+            9px;
+    }
+
+
+    .letter-small {
+        margin-bottom: 4px;
+
+        font-size: 4px;
+
+        letter-spacing: 1.8px;
+    }
+
+
+    .letter-content h2 {
+        font-size: 18px;
+    }
+
+
+    .letter-content h2 span {
+        margin:
+            0
+            4px;
+
+        font-size: 11px;
+    }
+
+
+    .letter-date {
+        margin-top: 5px;
+
+        font-size: 5px;
+
+        letter-spacing: 2px;
+    }
+
+
+    /* LEFT FOLD */
+
+    .envelope-left {
+        border-top:
+            104px solid transparent;
+
+        border-bottom:
+            104px solid transparent;
+
+        border-left:
+            165px solid #dec7a2;
+    }
+
+
+    /* RIGHT FOLD */
+
+    .envelope-right {
+        border-top:
+            104px solid transparent;
+
+        border-bottom:
+            104px solid transparent;
+
+        border-right:
+            165px solid #e5cfaa;
+    }
+
+
+    /* BOTTOM FOLD */
+
+    .envelope-bottom {
+        border-left:
+            165px solid transparent;
+
+        border-right:
+            165px solid transparent;
+
+        border-bottom:
+            120px solid #ead8b9;
+    }
+
+
+    /* FLAP */
+
+    .envelope-flap {
+        border-left:
+            165px solid transparent;
+
+        border-right:
+            165px solid transparent;
+
+        border-top:
+            116px solid #dfc59f;
+    }
+
+
+    /* SEAL */
+
+    .wax-seal {
+        top: 94px;
+
+        width: 52px;
+        height: 52px;
+    }
+
+
+    .wax-seal span {
+        font-size: 13px;
+    }
+
+
+    /* LETTER COMES OUT */
+
+    .envelope.open .invitation-card {
+        transform:
+            translateX(-50%)
+            translateY(-130px);
+    }
+
+
+    .open-text {
+        bottom: 18px;
+
+        font-size: 7px;
+
+        letter-spacing: 3px;
+    }
+}
+
+/* =========================================================
+   ENVELOPE AREA
+========================================================= */
+
+.envelope-area {
+    position: relative;
+
+    width: 600px;
+    max-width: 90%;
+
+    height: 450px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   ENVELOPE
+========================================================= */
+
+.envelope {
+    position: relative;
+
+    width: 500px;
+    height: 315px;
+
+    max-width: 90vw;
+
+    perspective: 1200px;
+
+    filter:
+        drop-shadow(
+            0 20px 22px
+            rgba(
+                82,
+                54,
+                38,
+                0.15
+            )
+        );
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+.envelope-area:hover .envelope {
+    transform:
+        translateY(-5px);
+}
+
+
+/* =========================================================
+   ENVELOPE BACK
+========================================================= */
+
+.envelope-back {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    border:
+        1px solid
+        rgba(
+            112,
+            74,
+            55,
+            0.24
+        );
+
+    background:
+        #e7d4b3;
+}
+
+
+/* =========================================================
+   INVITATION CARD INSIDE
+========================================================= */
+
+.invitation-card {
+    position: absolute;
+
+    left: 50%;
+    bottom: 15px;
+
+    z-index: 2;
+
+    width: 430px;
+    height: 270px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        #f8f0df;
+
+    border:
+        1px solid
+        rgba(
+            128,
+            91,
+            66,
+            0.25
+        );
+
+    transition:
+        transform 1.3s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        );
+}
+
+
+.card-border {
+    position: absolute;
+
+    inset: 13px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(
+            132,
+            95,
+            62,
+            0.35
+        );
+
+    text-align: center;
+}
+
+
+.card-small {
+    margin-bottom: 16px;
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+
+    color: #81794d;
+}
+
+
+.card-border h2 {
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 57px;
+
+    font-weight: 400;
+
+    color: #97473e;
+}
+
+
+.card-border h2 span {
+    font-size: 25px;
+
+    color: #81794d;
+}
+
+
+.card-line {
+    width: 45px;
+    height: 1px;
+
+    margin:
+        12px auto;
+
+    background:
+        rgba(
+            126,
+            84,
+            61,
+            0.5
+        );
+}
+
+
+.card-text {
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    font-style: italic;
+
+    color: #775d4d;
+}
+
+
+/* =========================================================
+   LEFT ENVELOPE FOLD
+========================================================= */
+
+.envelope-left {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    z-index: 4;
+
+    width: 0;
+    height: 0;
+
+    border-top:
+        157px solid transparent;
+
+    border-bottom:
+        158px solid transparent;
+
+    border-left:
+        250px solid #dec7a2;
+}
+
+
+/* =========================================================
+   RIGHT ENVELOPE FOLD
+========================================================= */
+
+.envelope-right {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    z-index: 4;
+
+    width: 0;
+    height: 0;
+
+    border-top:
+        157px solid transparent;
+
+    border-bottom:
+        158px solid transparent;
+
+    border-right:
+        250px solid #e5cfaa;
+}
+
+
+/* =========================================================
+   BOTTOM ENVELOPE FOLD
+========================================================= */
+
+.envelope-bottom {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    z-index: 5;
+
+    width: 0;
+    height: 0;
+
+    border-left:
+        250px solid transparent;
+
+    border-right:
+        250px solid transparent;
+
+    border-bottom:
+        180px solid #ead8b9;
+}
+
+
+/* =========================================================
+   TOP FLAP
+========================================================= */
+
+.envelope-flap {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    z-index: 7;
+
+    width: 0;
+    height: 0;
+
+    border-left:
+        250px solid transparent;
+
+    border-right:
+        250px solid transparent;
+
+    border-top:
+        175px solid #dfc59f;
+
+    transform-origin:
+        top center;
+
+    transition:
+        transform 1s
+        cubic-bezier(
+            0.65,
+            0,
+            0.35,
+            1
+        ),
+        z-index 0s 0.45s;
+}
+
+
+/* =========================================================
+   WAX SEAL
+========================================================= */
+
+.wax-seal {
+    position: absolute;
+
+    left: 50%;
+    top: 145px;
+
+    z-index: 10;
+
+    width: 67px;
+    height: 67px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    border:
+        2px solid
+        rgba(
+            255,
+            224,
+            190,
+            0.28
+        );
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #b75e52,
+            #87382f 60%,
+            #68271f
+        );
+
+    box-shadow:
+        0 5px 8px
+        rgba(
+            71,
+            37,
+            26,
+            0.22
+        );
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.5s ease;
+}
+
+
+.wax-seal::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 6px;
+
+    border:
+        1px solid
+        rgba(
+            245,
+            208,
+            170,
+            0.45
+        );
+
+    border-radius: 50%;
+}
+
+
+.wax-seal span {
+    position: relative;
+
+    z-index: 2;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 17px;
+
+    font-style: italic;
+
+    color: #f4d9b7;
+}
+
+
+/* =========================================================
+   CLICK TEXT
+========================================================= */
+
+.open-text {
+    margin-top: 32px;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    color: #725744;
+
+    animation:
+        envelopePulse
+        2s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes envelopePulse {
+    0%,
+    100% {
+        opacity: 0.45;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   ENVELOPE OPEN ANIMATION
+========================================================= */
+
+.envelope.open .wax-seal {
+    opacity: 0;
+
+    transform:
+        translateX(-50%)
+        scale(0.65);
+}
+
+
+.envelope.open .envelope-flap {
+    z-index: 0;
+
+    transform:
+        rotateX(180deg);
+}
+
+
+.envelope.open .invitation-card {
+    transform:
+        translateX(-50%)
+        translateY(-180px);
+}
+
+
+/* =========================================================
+   BOTTOM DECORATION
+========================================================= */
+
+.opening-bottom {
+    position: absolute;
+
+    left: 50%;
+    bottom: 7%;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    width: 100%;
+}
+
+
+.opening-bottom span {
+    width: 55px;
+    height: 1px;
+
+    background:
+        rgba(
+            119,
+            87,
+            66,
+            0.35
+        );
+}
+
+
+.opening-bottom p {
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 11px;
+
+    font-style: italic;
+
+    color: #806858;
+}
+
+
+/* =========================================================
+   MAIN WEBSITE
+========================================================= */
+
+.main-invite {
+    display: none;
+
+    width: 100%;
+
+    opacity: 0;
+
+    transition:
+        opacity 1.1s ease;
+}
+
+
+.main-invite.show {
+    display: block;
+}
+
+
+.main-invite.visible {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .opening-heading {
+        top: 9%;
+    }
+
+
+    .opening-heading p {
+        font-size: 7px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .opening-heading h1 {
+        font-size: 36px;
+    }
+
+
+    .envelope-area {
+        width: 100%;
+
+        height: 400px;
+    }
+
+
+    .envelope {
+        width: 330px;
+        height: 208px;
+    }
+
+
+    .invitation-card {
+        width: 285px;
+        height: 180px;
+
+        bottom: 10px;
+    }
+
+
+    .card-border {
+        inset: 8px;
+    }
+
+
+    .card-small {
+        margin-bottom: 9px;
+
+        font-size: 5px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .card-border h2 {
+        font-size: 40px;
+    }
+
+
+    .card-border h2 span {
+        font-size: 18px;
+    }
+
+
+    .card-line {
+        margin:
+            7px auto;
+    }
+
+
+    .card-text {
+        font-size: 8px;
+    }
+
+
+    .envelope-left {
+        border-top:
+            104px solid transparent;
+
+        border-bottom:
+            104px solid transparent;
+
+        border-left:
+            165px solid #dec7a2;
+    }
+
+
+    .envelope-right {
+        border-top:
+            104px solid transparent;
+
+        border-bottom:
+            104px solid transparent;
+
+        border-right:
+            165px solid #e5cfaa;
+    }
+
+
+    .envelope-bottom {
+        border-left:
+            165px solid transparent;
+
+        border-right:
+            165px solid transparent;
+
+        border-bottom:
+            120px solid #ead8b9;
+    }
+
+
+    .envelope-flap {
+        border-left:
+            165px solid transparent;
+
+        border-right:
+            165px solid transparent;
+
+        border-top:
+            116px solid #dfc59f;
+    }
+
+
+    .wax-seal {
+        top: 95px;
+
+        width: 52px;
+        height: 52px;
+    }
+
+
+    .wax-seal span {
+        font-size: 13px;
+    }
+
+
+    .envelope.open .invitation-card {
+        transform:
+            translateX(-50%)
+            translateY(-120px);
+    }
+
+
+    .open-text {
+        margin-top: 27px;
+
+        font-size: 7px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .opening-bottom {
+        bottom: 6%;
+
+        gap: 10px;
+    }
+
+
+    .opening-bottom span {
+        width: 30px;
+    }
+
+
+    .opening-bottom p {
+        font-size: 9px;
+    }
+}
+
+
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 0.45;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   OPENING WEDDING ART
+========================================================= */
+
+.wedding-art {
+    position: absolute;
+
+    left: 50%;
+    bottom: -70px;
+
+    transform: translateX(-50%);
+
+    z-index: 8;
+
+    width: 760px;
+    max-width: 72vw;
+
+    pointer-events: none;
+
+    animation:
+        weddingRise
+        1.8s
+        ease
+        both;
+}
+
+.wedding-art img {
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 9px 8px
+            rgba(82, 51, 31, 0.08)
+        );
+}
+
+@keyframes weddingRise {
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   MAIN INVITATION
+========================================================= */
+
+.main-invite {
+    display: none;
+
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: hidden;
+
+    opacity: 0;
+
+    transition:
+        opacity 1s ease;
+}
+
+.main-invite.show {
+    display: block;
+}
+
+.main-invite.visible {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        80px
+        30px;
+
+    overflow: hidden;
+
+    background-image: url("bg.png");
+    background-size: 700px auto;
+    background-repeat: repeat;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+    position: relative;
+
+    z-index: 10;
+
+    width: 700px;
+    max-width: 65%;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    color: #704936;
+}
+
+
+/* =========================================================
+   GANESHA
+========================================================= */
+
+.hero-ganesha {
+    position: relative;
+
+    display: block;
+
+    width: 82px;
+    max-width: 82px;
+
+    height: auto;
+
+    margin:
+        0 auto
+        22px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   INVITATION TEXT
+========================================================= */
+
+.hero-request {
+    width: 100%;
+
+    margin:
+        0 auto
+        25px;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 12px;
+
+    line-height: 2;
+
+    font-weight: 600;
+
+    letter-spacing: 2.5px;
+
+    text-align: center;
+
+    color: #777345;
+}
+
+
+/* =========================================================
+   NAMES
+========================================================= */
+
+.bride-name,
+.groom-name {
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            65px,
+            7vw,
+            105px
+        );
+
+    line-height: 1;
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    letter-spacing: -2px;
+
+    color: #9c413d;
+}
+
+
+/* =========================================================
+   PARENTS
+========================================================= */
+
+.parents {
+    margin:
+        16px
+        0
+        24px;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: #694d40;
+}
+
+.parents strong {
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   WITH
+========================================================= */
+
+.with {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    margin:
+        5px auto
+        15px;
+}
+
+.with span {
+    width: 55px;
+    height: 1px;
+
+    background:
+        rgba(
+            143,
+            92,
+            76,
+            0.45
+        );
+}
+
+.with em {
+    font-size: 23px;
+
+    color: #9c413d;
+}
+
+
+/* =========================================================
+   PARROT
+========================================================= */
+
+.hero-parrot {
+    position: absolute !important;
+
+    top: 90px !important;
+    left: 7% !important;
+
+    width: 125px !important;
+    max-width: 125px !important;
+
+    height: auto !important;
+
+    z-index: 5;
+
+    pointer-events: none;
+
+    animation:
+        parrotFloat
+        5s
+        ease-in-out
+        infinite;
+}
+
+@keyframes parrotFloat {
+    0%,
+    100% {
+        transform:
+            translate(0, 0)
+            rotate(-4deg);
+    }
+
+    50% {
+        transform:
+            translate(10px, -8px)
+            rotate(2deg);
+    }
+}
+
+
+/* =========================================================
+   BANANA LEAVES
+========================================================= */
+
+.hero-banana {
+    position: absolute !important;
+
+    top: -60px !important;
+    right: -55px !important;
+
+    left: auto !important;
+
+    width: 390px !important;
+    max-width: 390px !important;
+
+    height: auto !important;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    transform-origin:
+        right top;
+
+    animation:
+        leavesMove
+        7s
+        ease-in-out
+        infinite;
+}
+
+@keyframes leavesMove {
+    0%,
+    100% {
+        transform:
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            rotate(-2deg);
+    }
+}
+
+
+/* =========================================================
+   LOTUS
+========================================================= */
+
+.hero-lotus {
+    position: absolute !important;
+
+    left: -35px !important;
+    bottom: -85px !important;
+
+    top: auto !important;
+    right: auto !important;
+
+    width: 330px !important;
+    max-width: 330px !important;
+
+    height: auto !important;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    transform-origin:
+        left bottom;
+
+    animation:
+        lotusFloat
+        6s
+        ease-in-out
+        infinite;
+}
+
+@keyframes lotusFloat {
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-7px)
+            rotate(1deg);
+    }
+}
+
+
+/* =========================================================
+   KOLAM
+   IMPORTANT FIX FOR YOUR SCREENSHOT
+========================================================= */
+
+.kolam-crop {
+    position: absolute !important;
+
+    left: 0 !important;
+    top: 20% !important;
+
+    width: 180px !important;
+    height: 350px !important;
+
+    overflow: hidden !important;
+
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+.hero-kolam {
+    position: absolute !important;
+
+    left: -55px !important;
+    top: 0 !important;
+
+    right: auto !important;
+    bottom: auto !important;
+
+    width: 235px !important;
+    max-width: none !important;
+
+    height: auto !important;
+
+    margin: 0 !important;
+
+    object-fit: contain;
+
+    opacity: 0.92;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SCRATCH DATE SECTION
+========================================================= */
+
+.date-reveal-section {
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        100px
+        20px
+        110px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    background-image:
+        url("bg.png");
+
+    background-size:
+        700px auto;
+
+    background-repeat:
+        repeat;
+
+    color: #704936;
+}
+
+.date-heading {
+    margin-bottom: 35px;
+}
+
+.date-eyebrow {
+    margin-bottom: 12px;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 5px;
+
+    color: #81794d;
+}
+
+.date-reveal-section h2 {
+    margin: 0;
+
+    font-size: 42px;
+
+    font-weight: 500;
+
+    color: #754c3b;
+}
+
+.scratch-instruction {
+    margin-top: 17px;
+
+    font-size: 14px;
+
+    font-style: italic;
+
+    color: #8c7667;
+}
+
+
+/* =========================================================
+   SCRATCH CARD
+========================================================= */
+
+.scratch-card {
+    position: relative;
+
+    width: 520px;
+    max-width: 90%;
+
+    height: 190px;
+
+    margin:
+        0 auto
+        55px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(
+            121,
+            79,
+            55,
+            0.25
+        );
+
+    background:
+        rgba(
+            255,
+            250,
+            239,
+            0.45
+        );
+}
+
+.revealed-date {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 30px;
+
+    padding: 25px;
+
+    color: #8e3f38;
+}
+
+.date-day {
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 95px;
+
+    line-height: 1;
+
+    font-weight: 400;
+}
+
+.date-text {
+    display: flex;
+
+    flex-direction: column;
+
+    padding-left: 25px;
+
+    text-align: left;
+
+    border-left:
+        1px solid
+        rgba(
+            117,
+            76,
+            59,
+            0.35
+        );
+}
+
+.date-text span {
+    font-size: 15px;
+
+    letter-spacing: 4px;
+}
+
+.date-text strong {
+    margin-top: 4px;
+
+    font-size: 35px;
+
+    font-weight: 500;
+}
+
+.muhurtham {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    color: #735543;
+}
+
+.muhurtham small {
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+.muhurtham span {
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   SCRATCH CANVAS
+========================================================= */
+
+#scratchCanvas {
+    position: absolute;
+
+    inset: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 5;
+
+    cursor: grab;
+
+    touch-action: none;
+}
+
+#scratchCanvas:active {
+    cursor: grabbing;
+}
+
+
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+.countdown-title {
+    margin-bottom: 25px;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    color: #81794d;
+}
+
+.countdown {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+}
+
+.count-box {
+    min-width: 90px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.count-box strong {
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 48px;
+
+    line-height: 1;
+
+    font-weight: 400;
+
+    color: #98473f;
+}
+
+.count-box span {
+    margin-top: 9px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #7e704e;
+}
+
+.count-divider {
+    margin-top: -17px;
+
+    font-size: 30px;
+
+    color:
+        rgba(
+            112,
+            73,
+            54,
+            0.45
+        );
+}
+
+.countdown-message {
+    margin-top: 27px;
+
+    font-size: 13px;
+
+    font-style: italic;
+
+    color: #8b7463;
+}
+
+
+/* =========================================================
+   WEDDING JOURNEY
+========================================================= */
+
+.wedding-journey {
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        100px
+        20px
+        140px;
+
+    overflow: hidden;
+
+    background-image:
+        url("bg.png");
+
+    background-size:
+        700px auto;
+
+    background-repeat:
+        repeat;
+}
+
+
+/* =========================================================
+   JOURNEY HEADING
+========================================================= */
+
+.journey-heading {
+    position: relative;
+
+    z-index: 10;
+
+    margin:
+        0 auto
+        90px;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transform:
+        translateY(80px)
+        scale(0.96);
+
+    transition:
+        opacity 1.1s ease,
+        transform 1.3s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        );
+}
+
+.journey-heading.reveal {
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+.journey-heading > p {
+    margin-bottom: 14px;
+
+    font-size: 8px;
+
+    letter-spacing: 5px;
+
+    color: #89634d;
+}
+
+.journey-heading h2 {
+    margin: 0;
+
+    font-family:
+        "Nirmala UI",
+        serif;
+
+    font-size:
+        clamp(
+            40px,
+            5vw,
+            58px
+        );
+
+    line-height: 1.5;
+
+    font-weight: 600;
+
+    color: #674535;
+}
+
+.journey-heading-line {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+    color: #8e624b;
+}
+
+.journey-heading-line span {
+    width: 48px;
+    height: 1px;
+
+    background: #956c53;
+}
+
+
+/* =========================================================
+   JOURNEY CONTAINER
+========================================================= */
+
+.journey {
+    position: relative;
+
+    width: 1100px;
+    max-width: 96%;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   EVENTS
+========================================================= */
+
+.event {
+    position: relative;
+
+    z-index: 3;
+
+    width: 100%;
+
+    min-height: 390px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 90px;
+
+    opacity: 0;
+
+    transition:
+        opacity 1.1s ease,
+        transform 1.35s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        );
+}
+
+.event-left {
+    padding-right: 12%;
+
+    transform:
+        translateX(-130px)
+        translateY(45px);
+}
+
+.event-right {
+    padding-left: 12%;
+
+    transform:
+        translateX(130px)
+        translateY(45px);
+}
+
+.event.reveal {
+    opacity: 1;
+
+    transform:
+        translateX(0)
+        translateY(0);
+}
+
+
+/* =========================================================
+   EVENT ART
+========================================================= */
+
+.event-art {
+    position: relative;
+
+    width: 350px;
+
+    max-width: 42%;
+
+    flex-shrink: 0;
+
+    z-index: 4;
+
+    opacity: 0;
+
+    transform:
+        translateY(45px)
+        scale(0.9);
+
+    transition:
+        opacity 1s ease 0.15s,
+        transform 1.2s ease 0.15s;
+}
+
+.event.reveal .event-art {
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+.event-art img {
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 9px 10px
+            rgba(
+                75,
+                45,
+                27,
+                0.08
+            )
+        );
+
+    animation:
+        gentleFloat
+        5s
+        ease-in-out
+        infinite;
+}
+
+@keyframes gentleFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+
+/* =========================================================
+   EVENT TEXT
+========================================================= */
+
+.event-text {
+    position: relative;
+
+    width: 310px;
+
+    max-width: 40%;
+
+    flex-shrink: 0;
+
+    z-index: 4;
+
+    opacity: 0;
+
+    transform:
+        translateY(45px);
+
+    transition:
+        opacity 0.9s ease 0.35s,
+        transform 1s ease 0.35s;
+}
+
+.event.reveal .event-text {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+.event-text h2,
+.event-text h3 {
+    margin:
+        0
+        0
+        13px;
+
+    font-family:
+        "Nirmala UI",
+        serif;
+
+    font-size:
+        clamp(
+            34px,
+            3.5vw,
+            45px
+        );
+
+    line-height: 1.45;
+
+    font-weight: 650;
+
+    color: #674535;
+}
+
+.event-text p {
+    margin-bottom: 8px;
+
+    font-family:
+        "Nirmala UI",
+        sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    font-weight: 500;
+
+    color: #775442;
+}
+
+.event-text small {
+    display: block;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: #7d5946;
+}
+
+
+/* =========================================================
+   CONNECTORS
+========================================================= */
+
+.connector {
+    position: relative;
+
+    z-index: 1;
+
+    width: 58%;
+    height: 200px;
+
+    margin-top: -70px;
+    margin-bottom: -70px;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    transform:
+        scaleY(0.25);
+
+    transform-origin:
+        top center;
+
+    transition:
+        opacity 0.8s ease,
+        transform 1.4s ease;
+}
+
+.connector.reveal {
+    opacity: 0.9;
+
+    transform:
+        scaleY(1);
+}
+
+.connector-right {
+    margin-left: 35%;
+    margin-right: 7%;
+}
+
+.connector-left {
+    margin-left: 7%;
+    margin-right: 35%;
+}
+
+.connector svg {
+    width: 100%;
+    height: 100%;
+
+    overflow: visible;
+}
+
+.connector path {
+    fill: none;
+
+    stroke: #704a36;
+
+    stroke-width: 2.6;
+
+    stroke-dasharray:
+        6 10;
+
+    stroke-linecap: round;
+
+    vector-effect:
+        non-scaling-stroke;
+
+    animation:
+        movingDots
+        15s
+        linear
+        infinite;
+}
+
+@keyframes movingDots {
+    to {
+        stroke-dashoffset: -100;
+    }
+}
+
+.connector::after {
+    content: none !important;
+}
+
+
+/* =========================================================
+   JOURNEY END
+========================================================= */
+
+.journey-ending {
+    width: 650px;
+    max-width: 90%;
+
+    margin:
+        110px auto
+        20px;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transform:
+        translateY(70px);
+
+    transition:
+        opacity 1s ease,
+        transform 1.1s ease;
+}
+
+.journey-ending.reveal {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+.journey-ending-line {
+    width: 60px;
+    height: 1px;
+
+    margin:
+        22px auto;
+
+    background:
+        rgba(
+            126,
+            80,
+            53,
+            0.55
+        );
+}
+
+.journey-ending h3 {
+    margin: 8px 0;
+
+    font-size: 30px;
+
+    font-weight: 500;
+
+    color: #98473f;
+}
+
+.journey-ending p {
+    margin: 5px 0;
+
+    color: #806655;
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.location-section {
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        110px
+        7%
+        80px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    background-image:
+        url("bg.png");
+
+    background-size:
+        700px auto;
+
+    background-repeat:
+        repeat;
+}
+
+.location-heading {
+    margin-bottom: 55px;
+
+    opacity: 0;
+
+    transform:
+        translateY(70px);
+
+    transition:
+        opacity 1s ease,
+        transform 1.1s ease;
+}
+
+.location-heading.reveal {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+.location-small {
+    margin-bottom: 10px;
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    color: #81794d;
+}
+
+.location-heading h2 {
+    margin: 0;
+
+    font-size: 44px;
+
+    font-weight: 500;
+
+    color: #754c3b;
+}
+
+.location-line {
+    width: 55px;
+    height: 1px;
+
+    margin:
+        20px auto
+        0;
+
+    background:
+        #a45c4e;
+}
+
+
+/* =========================================================
+   LOCATION CONTENT
+========================================================= */
+
+.location-content {
+    width: 1000px;
+    max-width: 100%;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        0.8fr
+        1.2fr;
+
+    align-items: stretch;
+
+    border:
+        1px solid
+        rgba(
+            112,
+            73,
+            54,
+            0.20
+        );
+}
+
+.venue-details {
+    padding:
+        60px
+        35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(
+            255,
+            250,
+            239,
+            0.40
+        );
+
+    opacity: 0;
+
+    transform:
+        translateX(-90px);
+
+    transition:
+        opacity 1s ease,
+        transform 1.2s ease;
+}
+
+.venue-details.reveal {
+    opacity: 1;
+
+    transform:
+        translateX(0);
+}
+
+.venue-label {
+    margin-bottom: 17px;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #81794d;
+}
+
+.venue-details h3 {
+    margin-bottom: 14px;
+
+    font-size: 36px;
+
+    font-weight: 400;
+
+    color: #98473f;
+}
+
+.venue-address {
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #765c4e;
+}
+
+.venue-date {
+    margin: 25px 0;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    color: #765c4e;
+}
+
+.map-button {
+    display: inline-block;
+
+    padding:
+        13px
+        23px;
+
+    border:
+        1px solid
+        #9c5b4b;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    text-decoration: none;
+
+    color: #8f493e;
+
+    background: transparent;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.map-button:hover {
+    background: #945044;
+
+    color: #fff9ed;
+
+    transform:
+        translateY(-2px);
+}
+
+.map-wrapper {
+    min-height: 420px;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transform:
+        translateX(90px);
+
+    transition:
+        opacity 1s ease 0.15s,
+        transform 1.2s ease 0.15s;
+}
+
+.map-wrapper.reveal {
+    opacity: 1;
+
+    transform:
+        translateX(0);
+}
+
+.map-wrapper iframe {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 420px;
+
+    border: 0;
+
+    filter:
+        sepia(18%)
+        saturate(75%)
+        contrast(92%);
+}
+
+.location-footer {
+    margin-top: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+
+    opacity: 0;
+
+    transform:
+        translateY(50px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.location-footer.reveal {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+.location-footer span {
+    width: 55px;
+    height: 1px;
+
+    background:
+        rgba(
+            126,
+            86,
+            65,
+            0.40
+        );
+}
+
+.location-footer p {
+    font-size: 13px;
+
+    font-style: italic;
+
+    color: #806858;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    /* OPENING */
+
+    .tree {
+        width: 38vw;
+        height: 48vh;
+    }
+
+    .tree img {
+        width: 290px;
+    }
+
+    .tree-left img {
+        left: -115px;
+    }
+
+    .tree-right img {
+        right: -115px;
+    }
+
+    .opening-center {
+        top: 22%;
+    }
+
+    .wedding-logo {
+        width: 175px;
+    }
+
+    .click-text {
+        font-size: 7px;
+
+        letter-spacing: 3px;
+    }
+
+    .wedding-art {
+        width: 520px;
+        max-width: 92vw;
+
+        bottom: -20px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 100svh;
+
+        padding:
+            80px
+            15px
+            90px;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 76%;
+    }
+
+    .hero-ganesha {
+        width: 60px;
+        max-width: 60px;
+
+        margin-bottom: 17px;
+    }
+
+    .hero-request {
+        font-size: 7px;
+
+        line-height: 1.8;
+
+        letter-spacing: 1.4px;
+    }
+
+    .bride-name,
+    .groom-name {
+        font-size: 55px;
+    }
+
+    .parents {
+        margin:
+            10px
+            0
+            17px;
+
+        font-size: 11px;
+
+        line-height: 1.7;
+    }
+
+    .with {
+        gap: 10px;
+
+        margin:
+            3px auto
+            10px;
+    }
+
+    .with span {
+        width: 30px;
+    }
+
+    .with em {
+        font-size: 17px;
+    }
+
+
+    /* HERO DECORATIONS */
+
+    .hero-parrot {
+        top: 70px !important;
+        left: 15px !important;
+
+        width: 72px !important;
+        max-width: 72px !important;
+    }
+
+    .hero-banana {
+        top: -20px !important;
+        right: -65px !important;
+
+        width: 220px !important;
+        max-width: 220px !important;
+    }
+
+    .hero-lotus {
+        left: -55px !important;
+        bottom: -35px !important;
+
+        width: 210px !important;
+        max-width: 210px !important;
+    }
+
+    .kolam-crop {
+        left: 0 !important;
+        top: 24% !important;
+
+        width: 100px !important;
+        height: 210px !important;
+    }
+
+    .hero-kolam {
+        left: -36px !important;
+
+        width: 145px !important;
+    }
+
+
+    /* SCRATCH */
+
+    .date-reveal-section {
+        padding:
+            75px
+            15px
+            85px;
+    }
+
+    .date-reveal-section h2 {
+        font-size: 34px;
+    }
+
+    .scratch-card {
+        width: 340px;
+
+        height: 155px;
+
+        margin-bottom: 45px;
+    }
+
+    .revealed-date {
+        gap: 13px;
+
+        padding: 15px;
+    }
+
+    .date-day {
+        font-size: 65px;
+    }
+
+    .date-text {
+        padding-left: 13px;
+    }
+
+    .date-text span {
+        font-size: 9px;
+
+        letter-spacing: 2px;
+    }
+
+    .date-text strong {
+        font-size: 25px;
+    }
+
+    .muhurtham small {
+        font-size: 6px;
+    }
+
+    .muhurtham span {
+        font-size: 11px;
+    }
+
+    .countdown {
+        gap: 5px;
+    }
+
+    .count-box {
+        min-width: 60px;
+    }
+
+    .count-box strong {
+        font-size: 34px;
+    }
+
+    .count-box span {
+        font-size: 7px;
+    }
+
+    .count-divider {
+        font-size: 20px;
+    }
+
+
+    /* JOURNEY */
+
+    .wedding-journey {
+        padding:
+            75px
+            10px
+            100px;
+    }
+
+    .journey-heading {
+        margin-bottom: 65px;
+    }
+
+    .journey-heading h2 {
+        font-size: 36px;
+    }
+
+    .journey {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .event {
+        min-height: 280px;
+
+        gap: 8px;
+    }
+
+    .event-left {
+        padding-right: 0;
+
+        transform:
+            translateX(-50px)
+            translateY(30px);
+    }
+
+    .event-right {
+        padding-left: 0;
+
+        transform:
+            translateX(50px)
+            translateY(30px);
+    }
+
+    .event.reveal {
+        transform:
+            translateX(0)
+            translateY(0);
+    }
+
+    .event-art {
+        width: 55%;
+        max-width: 55%;
+    }
+
+    .event-text {
+        width: 42%;
+        max-width: 42%;
+
+        padding:
+            0
+            5px;
+    }
+
+    .event-text h2,
+    .event-text h3 {
+        font-size: 22px;
+    }
+
+    .event-text p,
+    .event-text small {
+        font-size: 10px;
+    }
+
+    .connector {
+        width: 72%;
+
+        height: 130px;
+
+        margin-top: -45px;
+        margin-bottom: -45px;
+    }
+
+    .connector-right {
+        margin-left: 24%;
+        margin-right: 4%;
+    }
+
+    .connector-left {
+        margin-left: 4%;
+        margin-right: 24%;
+    }
+
+
+    /* LOCATION */
+
+    .location-section {
+        padding:
+            80px
+            18px
+            65px;
+    }
+
+    .location-heading h2 {
+        font-size: 34px;
+    }
+
+    .location-content {
+        grid-template-columns:
+            1fr;
+    }
+
+    .venue-details {
+        padding:
+            45px
+            20px;
+
+        transform:
+            translateY(70px);
+    }
+
+    .venue-details.reveal {
+        transform:
+            translateY(0);
+    }
+
+    .venue-details h3 {
+        font-size: 30px;
+    }
+
+    .map-wrapper {
+        min-height: 330px;
+
+        transform:
+            translateY(70px);
+    }
+
+    .map-wrapper.reveal {
+        transform:
+            translateY(0);
+    }
+
+    .map-wrapper iframe {
+        min-height: 330px;
+    }
+
+    .location-footer {
+        gap: 12px;
+    }
+
+    .location-footer span {
+        width: 28px;
+    }
+
+    .location-footer p {
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .hero-content {
+        max-width: 78%;
+    }
+
+    .bride-name,
+    .groom-name {
+        font-size: 49px;
+    }
+
+    .kolam-crop {
+        width: 85px !important;
+    }
+
+    .hero-kolam {
+        width: 125px !important;
+    }
+
+    .count-box {
+        min-width: 51px;
+    }
+
+    .count-box strong {
+        font-size: 29px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .event,
+    .event-art,
+    .event-text,
+    .connector,
+    .journey-heading,
+    .journey-ending,
+    .location-heading,
+    .venue-details,
+    .map-wrapper,
+    .location-footer {
+        transition: none;
+    }
+}
+/* =========================================
+   LETTER INSIDE ENVELOPE
+========================================= */
+
+.invitation-card {
+    position: absolute;
+
+    left: 50%;
+    bottom: 15px;
+
+    z-index: 2;
+
+    width: 430px;
+    height: 285px;
+
+    transform: translateX(-50%);
+
+    background: #f8f0df;
+
+    border: 1px solid rgba(120, 85, 60, 0.25);
+
+    overflow: hidden;
+
+    transition:
+        transform 1.3s
+        cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+.card-border {
+    position: absolute;
+
+    inset: 8px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(120, 85, 60, 0.30);
+}
+
+
+/* IMAGE */
+
+.letter-image {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+}
+
+
+.letter-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    display: block;
+}
+
+
+/* LIGHT AREA FOR TEXT */
+
+.letter-content {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 3;
+
+    padding:
+        25px
+        15px
+        18px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(250, 242, 225, 0.98) 0%,
+            rgba(250, 242, 225, 0.90) 65%,
+            rgba(250, 242, 225, 0) 100%
+        );
+}
+
+
+.letter-small {
+    margin-bottom: 5px;
+
+    font-family: Georgia, serif;
+
+    font-size: 6px;
+
+    letter-spacing: 2.5px;
+
+    color: #756344;
+}
+
+
+.letter-content h2 {
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 27px;
+
+    line-height: 1;
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    color: #913f38;
+}
+
+
+.letter-content h2 span {
+    margin: 0 5px;
+
+    font-size: 17px;
+
+    color: #81794d;
+}
+
+
+.letter-date {
+    margin-top: 8px;
+
+    font-family: Georgia, serif;
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+
+    color: #735c4d;
+}
+
+
+/* WHEN ENVELOPE OPENS */
+
+.envelope.open .invitation-card {
+    transform:
+        translateX(-50%)
+        translateY(-180px);
+}
+/* =========================================================
+   JOURNEY KOLAM BORDER - SCREEN EDGES
+========================================================= */
+
+.journey {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* BOTH BORDERS */
+
+.journey-border {
+    position: absolute;
+
+    top: 20px;
+    bottom: 20px;
+
+    width: 32px;
+
+    z-index: 4;
+
+    pointer-events: none;
+
+    background-image: url("kolam-border.png");
+
+    background-repeat: repeat-y;
+
+    background-position: top center;
+
+    background-size: 32px auto;
+
+    opacity: 0.9;
+}
+
+
+/* LEFT - AT EDGE */
+
+.journey-border-left {
+    left: 0;
+}
+
+
+/* RIGHT - AT EDGE */
+
+.journey-border-right {
+    right: 0;
+
+    transform: scaleX(-1);
+}
+
+
+/* CONTENT ABOVE BORDER */
+
+.journey-title,
+.event,
+.connector,
+.journey-ending {
+    position: relative;
+    z-index: 5;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .journey-border {
+        width: 20px;
+
+        top: 10px;
+        bottom: 10px;
+
+        background-size: 20px auto;
+    }
+
+    .journey-border-left {
+        left: 0;
+    }
+
+    .journey-border-right {
+        right: 0;
+    }
+}
+/* =========================================
+   CENTER JOURNEY HEADING
+========================================= */
+
+.journey-title {
+    position: relative;
+    z-index: 10;
+
+    width: 100%;
+
+    padding: 80px 20px 40px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.journey-small {
+    margin: 0 0 12px;
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+
+    color: #81794d;
+}
+
+.journey-title h1 {
+    margin: 0 auto;
+
+    text-align: center;
+
+    font-size: clamp(42px, 5vw, 65px);
+    line-height: 1.2;
+    font-weight: 500;
+
+    color: #704936;
+}
+
+.journey-title-line {
+    width: 65px;
+    height: 1px;
+
+    margin: 18px auto;
+
+    background: #a15b4c;
+}
+
+.journey-subtitle {
+    margin: 0 auto;
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+    font-size: 13px;
+    font-style: italic;
+
+    color: #806858;
+}
+/* =========================================
+   JOURNEY LOTUS DECORATIONS
+========================================= */
+
+.journey-lotus {
+    position: absolute;
+    width: 135px;
+    height: auto;
+
+    z-index: 3;
+
+    pointer-events: none;
+    opacity: 0.82;
+}
+
+
+/* FIRST LOTUS
+   empty right-side area between events */
+   .journey-lotus-right {
+    right: 20px;
+    top: 1150px;
+
+    transform:
+        scaleX(-1)
+        rotate(-7deg);
+}
+
+
+
+
+/* SECOND LOTUS
+   empty left-side area further down */
+
+.journey-lotus-right {
+    right: auto;
+    left: 55px;
+
+    top: 2050px;
+
+    transform: rotate(-8deg);
+}
+
+
+/* Main journey content stays above decorations */
+
+.journey-title,
+.event,
+.connector,
+.journey-ending {
+    position: relative;
+    z-index: 5;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .journey-lotus {
+        width: 75px;
+        opacity: 0.75;
+    }
+
+    .journey-lotus-left {
+        right: 25px;
+        top: 750px;
+    }
+
+    .journey-lotus-right {
+        left: 25px;
+        top: 1750px;
+    }
+}
+.journey-lotus-third {
+    right: 80px;
+    top: 650px;
+
+    width: 130px;
+
+    transform: rotate(8deg);
+}
+.hero-lamp {
+    position: absolute !important;
+    width: 70px !important;
+    height: auto !important;
+    z-index: 20 !important;
+    pointer-events: none;
+}
+
+/* FIRST LAMP - higher */
+.hero-lamp-left {
+    right: 20% !important;
+    left: auto !important;
+    top: -75px !important;
+}
+
+/* SECOND LAMP - lower */
+.hero-lamp-right {
+    right: 13% !important;
+    left: auto !important;
+    top: -10px !important;
+}
